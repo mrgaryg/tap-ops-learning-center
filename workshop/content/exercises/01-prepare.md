@@ -90,7 +90,7 @@ kubectl create ns tap-install
 ![Env](images/prepare-2.png)
 
 ```execute
-export INSTALL_BUNDLE=registry.tanzu.vmware.com/tanzu-cluster-essentials/cluster-essentials-bundle@sha256:54bf611711923dccd7c7f10603c846782b90644d48f1cb570b43a082d18e23b9
+export INSTALL_BUNDLE=registry.tanzu.vmware.com/tanzu-cluster-essentials/cluster-essentials-bundle@sha256:2354688e46d4bb4060f74fca069513c9b42ffa17a0a6d5b0dbb81ed52242ea44
 export INSTALL_REGISTRY_HOSTNAME=registry.tanzu.vmware.com
 ```
 
@@ -109,7 +109,20 @@ export INSTALL_REGISTRY_USERNAME=<Tanzu Network Registry username>
 ```copy-and-edit
 export INSTALL_REGISTRY_PASSWORD=<Tanzu Network password>
 ```
+*Note:* Just click on below command and paste in terminal 1, provide your <Pivnet Token> and press *ENTER* 
 
+```copy-and-edit
+pivnet login --api-token=<Tanzu Network password>
+```
+<p style="color:blue"><strong> Download Cluster essentials </strong></p>
+```execute
+pivnet download-product-files --product-slug='tanzu-cluster-essentials' --release-version='1.4.0' --product-file-id=1407185
+``` 
+<p style="color:blue"><strong> Un tar the cluster essentians to tanzu-cluster-essential directory </strong></p> 
+```execute
+tar -xvf tanzu-cluster-essentials-linux-amd64-1.4.0.tgz -C $HOME/tanzu-cluster-essentials
+```
+ 
 ```execute
 cd $HOME/tanzu-cluster-essentials
 ```
@@ -119,9 +132,35 @@ cd $HOME/tanzu-cluster-essentials
 ```execute
 ./install.sh -y
 ```
-
+<p style="color:blue"><strong> move Kapp to /usr/local/bin  </strong></p>
+```execute
+sudo cp $HOME/tanzu-cluster-essentials/kapp /usr/local/bin/kapp
+``` 
 ![Cluster Essentials](images/prepare-3.png)
-
+<p style="color:blue"><strong> Install Tanzu CLI  </strong></p> 
+```execute
+ pivnet download-product-files --product-slug='tanzu-application-platform' --release-version='1.4.0' --product-file-id=1404618
+``` 
+```execute 
+ tar -xvf tanzu-framework-linux-amd64-v0.25.4.1.tar -C $HOME/tanzu
+``` 
+```execute 
+ export TANZU_CLI_NO_INIT=true
+``` 
+```execute 
+ cd $HOME/tanzu
+``` 
+```execute 
+ sudo install cli/core/v0.25.4/tanzu-core-linux_amd64 /usr/local/bin/tanzu
+``` 
+```execute 
+ tanzu version
+```execute 
+ tanzu plugin install --local cli all
+``` 
+```execute
+ tanzu plugin list
+``` 
 <p style="color:blue"><strong> Create tap-registry secret </strong></p>
 
 ```execute
