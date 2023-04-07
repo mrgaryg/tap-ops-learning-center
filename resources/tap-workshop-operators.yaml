@@ -11,7 +11,7 @@ spec:
   url: https://github.com/Tanzu-Partner-SE/Tap14-opr
   content:
      files: "https://<githubtoken>:x-oauth-basic@github.com/Tanzu-Partner-SE/Tap14-opr/tarball/main?path=--anchored"
-     image: tanzupartnerworkshop.azurecr.io/tapworkshopimageoperators:v14
+     image: taptestdemoacr.azurecr.io/tapoperator:v14
   session:
     namespaces:
       budget: small
