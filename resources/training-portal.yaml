@@ -1,7 +1,7 @@
 apiVersion: learningcenter.tanzu.vmware.com/v1beta1
 kind: TrainingPortal
 metadata:
-  name: tap13
+  name: tap14
   annotations:
     kapp.k14s.io/update-strategy: always-replace
 spec:
@@ -16,12 +16,7 @@ spec:
     sessions:
       maximum: 45
   workshops:
-    - name: tap13-dev
-      expires: 360m
-      orphaned: 120m
-      capacity: 5
-      reserved: 2
-    - name: tap13-opr
+    - name: tap14-opr
       expires: 360m
       orphaned: 120m
       capacity: 5
