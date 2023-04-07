@@ -166,6 +166,7 @@ sudo cp $HOME/tanzu-cluster-essentials/kapp /usr/local/bin/kapp
  
 ```execute 
  tanzu version
+``` 
  
 ```execute 
  tanzu plugin install --local cli all
