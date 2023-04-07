@@ -104,12 +104,12 @@ export INSTALL_REGISTRY_USERNAME=<Tanzu Network Registry username>
 
 <p style="color:blue"><strong> Provide the Tanzu network password and execute in terminal </strong></p>
   
-*Note:* Just click on below command and paste in terminal 1, provide your <Tanzu Network password> and press *ENTER* 
+*Note:* Just click on below command and paste in terminal 1, provide your Tanzu Network password and press *ENTER* 
 
 ```copy-and-edit
 export INSTALL_REGISTRY_PASSWORD=<Tanzu Network password>
 ```
-*Note:* Just click on below command and paste in terminal 1, provide your <Pivnet Token> and press *ENTER* 
+*Note:* Just click on below command and paste in terminal 1, provide your Pivnet Token and press *ENTER* 
 
 ```copy-and-edit
 pivnet login --api-token=<Pivnet Token>
@@ -119,7 +119,8 @@ pivnet login --api-token=<Pivnet Token>
 ```execute
 pivnet download-product-files --product-slug='tanzu-cluster-essentials' --release-version='1.4.0' --product-file-id=1407185
 ``` 
-<p style="color:blue"><strong> Un tar the cluster essentians to tanzu-cluster-essential directory </strong></p> 
+<p style="color:blue"><strong> Un tar the cluster essentians to tanzu-cluster-essential directory </strong></p>
+ 
 ```execute
 tar -xvf tanzu-cluster-essentials-linux-amd64-1.4.0.tgz -C $HOME/tanzu-cluster-essentials
 ```
@@ -142,6 +143,7 @@ sudo cp $HOME/tanzu-cluster-essentials/kapp /usr/local/bin/kapp
 ![Cluster Essentials](images/prepare-3.png)
  
 <p style="color:blue"><strong> Install Tanzu CLI  </strong></p> 
+ 
 ```execute
  pivnet download-product-files --product-slug='tanzu-application-platform' --release-version='1.4.0' --product-file-id=1404618
 ```
