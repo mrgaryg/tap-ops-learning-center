@@ -30,15 +30,10 @@ kubectl apply -f $HOME/tekton-pipeline.yaml -n tap-install
 kubectl apply -f $HOME/scanpolicy.yaml -n tap-install
 ```
 
-<p style="color:blue"><strong> List the packages installed </strong></p>
-
-```execute
-sudo tanzu package installed list -A
-```
 
 ###### Execute the below Auto heal script
 
-```
+```execute
 source ~/autoheal.sh
 ```
 
