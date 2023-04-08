@@ -110,9 +110,12 @@ export INSTALL_REGISTRY_USERNAME=<Tanzu Network Registry username>
 export INSTALL_REGISTRY_PASSWORD=<Tanzu Network password>
 ```
 *Note:* Just click on below command and paste in terminal 1, provide your Pivnet Token and press *ENTER* 
-
+ 
 ```copy-and-edit
-pivnet login --api-token=<Pivnet Token>
+export PIVNET_TOKEN=<PIVNET_TOKEN>
+```
+```execute
+pivnet login --api-token=$PIVNET_TOKEN
 ```
 <p style="color:blue"><strong> Download Cluster essentials </strong></p>
  
