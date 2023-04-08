@@ -216,3 +216,6 @@ sed -i -r "s/password-registry/$DOCKER_REGISTRY_PASSWORD/g" $HOME/autoheal.sh
 ```execute
 sed -i -r "s/SESSION_NAME/$SESSION_NAME/g" $HOME/tap-values.yaml
 ```
+```execute
+sed -i -r "s/tap14/tap1.3/tap-demos/g" $HOME/tap-values.yaml
+``` 
