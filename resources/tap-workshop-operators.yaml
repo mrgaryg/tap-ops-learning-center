@@ -8,9 +8,9 @@ spec:
   vendor: eduk8s.io
   difficulty: beginner
   duration: 150m
-  url: https://github.com/Tanzu-Partner-SE/Tap14-opr
+  url: https://github.com/Tanzu-Partner-SE/Tap-14-Operator
   content:
-     files: "https://<githubtoken>:x-oauth-basic@github.com/Tanzu-Partner-SE/Tap14-opr/tarball/main?path=--anchored"
+     files: "https://<githubtoken>:x-oauth-basic@github.com/Tanzu-Partner-SE/Tap-14-Operator/tarball/main?path=--anchored"
      image: taptestdemoacr.azurecr.io/tapoperator:v14
   session:
     namespaces:
