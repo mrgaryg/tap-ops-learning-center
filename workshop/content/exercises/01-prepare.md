@@ -106,6 +106,10 @@ sudo cp $HOME/tanzu-cluster-essentials/kapp /usr/local/bin/kapp
 ![Cluster Essentials](images/prepare-3.png)
  
 <p style="color:blue"><strong> Install Tanzu CLI  </strong></p> 
+
+```execute 
+ cd $HOME/tanzu
+```
  
 ```execute
  pivnet download-product-files --product-slug='tanzu-application-platform' --release-version='1.4.0' --product-file-id=1404618
@@ -119,9 +123,7 @@ sudo cp $HOME/tanzu-cluster-essentials/kapp /usr/local/bin/kapp
  export TANZU_CLI_NO_INIT=true
 ```
  
-```execute 
- cd $HOME/tanzu
-```
+
  
 ```execute 
  sudo install cli/core/v0.25.4/tanzu-core-linux_amd64 /usr/local/bin/tanzu
