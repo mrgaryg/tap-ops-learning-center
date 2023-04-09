@@ -47,7 +47,7 @@ sudo tanzu package installed list -A
 
 
 ```execute
-sudo tanzu apps workload create {{ session_namespace }}  --git-repo https://gitea-tapdemo.tap.tanzupartnerdemo.com/tapdemo-user/partnertapdemo --git-branch main --type web --label apps.tanzu.vmware.com/has-tests=true --label app.kubernetes.io/part-of=partnertapdemo --lable apps.tanzu.vmware.com/auto-configure-actuators: "true" -n tap-install --yes
+sudo tanzu apps workload create {{ session_namespace }}  --git-repo https://gitea-tapdemo.tap.tanzupartnerdemo.com/tapdemo-user/partnertapdemo --git-branch main --type web --label apps.tanzu.vmware.com/has-tests=true --label app.kubernetes.io/part-of=partnertapdemo --label apps.tanzu.vmware.com/auto-configure-actuators=true -n tap-install --yes
 ```
 
 <p style="color:blue"><strong> Get the status of deployed application </strong></p>
