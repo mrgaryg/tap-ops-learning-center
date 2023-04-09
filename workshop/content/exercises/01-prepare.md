@@ -5,11 +5,6 @@
 echo "Hello, Welcome to Partner workshop session"
 ```
 
-<p style="color:blue"><strong> Click here to check the Tanzu version</strong></p>
-
-```execute
-tanzu version
-```
 
 <p style="color:blue"><strong> Click here to check the AZ version</strong></p>
 
@@ -35,23 +30,8 @@ export SESSION_NAME={{ session_namespace }}
 url: https://gitea-tapdemo.tap.tanzupartnerdemo.com/tapdemo-user/tanzu-java-web-app
 ```
 
-######  AZ Login command to connect to Azure
+######  The instrcutoer will provide you with the Azure and Tanzunet credentails and the AZ login command
 
-```execute
-az login 
-```
-
-###### Set the subscription
-
-```execute
-az account set --subscription 
-```
-
-###### Provide ACR repo password and execute
-
-```execute
-export DOCKER_REGISTRY_PASSWORD=
-```
 
 ###### Create Kubernetes cluster with 3 nodes and it should take around 5-10 mins to complete, please wait for it to deploy successfully. 
  
