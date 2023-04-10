@@ -1,0 +1,92 @@
+profile: full
+ceip_policy_disclosed: true
+shared:
+  ingress_domain: tap14-w01-s006.demo.tanzupartnerdemo.com
+  image_registry:
+    project_path: "tapworkshopoperators.azurecr.io/tap14/tap-packages"
+    username: "tapworkshopoperators"
+    password: "password-registry"
+buildservice:
+  kp_default_repository: "tapworkshopoperators.azurecr.io/SESSION_NAME-build"
+  kp_default_repository_username: "tapworkshopoperators"
+  kp_default_repository_password: "password-registry"  
+supply_chain: testing_scanning
+ootb_supply_chain_testing_scanning:
+  registry:
+    server: "tapworkshopoperators.azurecr.io"
+    repository: "SESSION_NAME-supply" 
+  gitops:
+    ssh_secret: ""
+excluded_packages:
+- policy.apps.tanzu.vmware.com
+learningcenter:
+  ingressDomain: "workshop.SESSION_NAME.demo.tanzupartnerdemo.com"
+  imageRegistry:
+    username: "tapworkshopoperators"
+    password: "password-registry"
+    host: "tapworkshopoperators.azurecr.io"
+metadata_store:
+  ns_for_export_app_cert: "*"
+  app_service_type: ClusterIP 
+contour:
+  envoy:
+    service:
+      type: LoadBalancer
+accelerator:
+  server:
+    service_type: LoadBalancer
+    watched_namespace: accelerator-system
+  samples:
+    include: true
+appliveview:
+  ingressEnabled: true
+  ingressDomain: "SESSION_NAME.demo.tanzupartnerdemo.com"
+appliveview_connector:
+  backend:
+    sslDisabled: "true"
+tap_gui:
+  service_type: ClusterIP
+  app_config:
+    proxy:
+      /metadata-store:
+        target: https://metadata-store-app.metadata-store:8443/api/v1
+        changeOrigin: true
+        secure: false
+        headers:
+          Authorization: "Bearer ACCESS-TOKEN"
+          X-Custom-Source: project-star
+#    techdocs:
+#      builder: 'external'
+#      publisher:
+#        type: 'azureBlobStorage'
+#        azureBlobStorage:
+#          containerName: 'taptechdocscontainer'
+#          credentials:
+#            accountName: "taptechdocsblob"
+#            accountKey: "OCOHumPLlSDkwawWLPWd1BvBsV77Lib95Dh5xuiIFfBz4kwHSVPLnaeEVUIJQJolAYzvPa29/RYG+AStDcv2Gg=="
+#    auth:
+#      environment: development
+#      providers:
+#        github:
+#          development:
+#            clientId: "provideyourclientid"
+#            clientSecret: "provideyourcliensecret"
+    integrations:
+      git: # Other integrations available see NOTE below
+        - host: gitea-tapdemo.tap.tanzupartnerdemo.com
+          apiBaseUrl: https://gitea-tapdemo.tap.tanzupartnerdemo.com/api/v1
+          token: 8660156393e71ed89cb593e0f0242f69abe97097    #### Provide your github token
+    catalog:
+      locations:
+        - type: url
+          target: https://gitea-tapdemo.tap.tanzupartnerdemo.com/tapdemo-user/partnertapdemo/raw/branch/main/catalog/catalog-info.yaml 
+        - type: url
+          target: https://gitea-tapdemo.tap.tanzupartnerdemo.com/tapdemo-user/tanzuapp/raw/branch/main/blank/catalog-info.yaml
+    backend:
+      reading:
+        allow:
+          - host: "gitea-tapdemo.tap.tanzupartnerdemo.com"
+          - host: "acc-server.accelerator-system.svc.cluster.local"
+grype:
+  namespace: "tap-install" # (optional) Defaults to default namespace.
+  targetImagePullSecret: "registry-credentials"
