@@ -164,6 +164,14 @@ kubectl get pods -n kapp-controller
 ```execute
 kubectl get pods -n secretgen-controller
 ```
+<p style="color:blue"><strong> Copy the tap-values.yaml and auto-heal.sh file" </strong></p>
+
+```execute
+cp /opt/workshop/tap-values.yaml $HOME/tap-values.yaml
+```
+```execute
+cp /opt/workshop/autoheal.sh $HOME/autoheal.sh
+```
 
 <p style="color:blue"><strong> Changes to tap values file" </strong></p>
 
