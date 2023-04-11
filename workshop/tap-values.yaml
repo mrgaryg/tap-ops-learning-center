@@ -1,7 +1,7 @@
 profile: full
 ceip_policy_disclosed: true
 shared:
-  ingress_domain: tap14-w01-s006.demo.tanzupartnerdemo.com
+  ingress_domain: SESSION_NAME.demo.tanzupartnerdemo.com
   image_registry:
     project_path: "tapworkshopoperators.azurecr.io/tap14/tap-packages"
     username: "tapworkshopoperators"
