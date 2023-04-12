@@ -1,16 +1,16 @@
 apiVersion: learningcenter.tanzu.vmware.com/v1beta1
 kind: Workshop
 metadata:
-  name: Tap14-opr
+  name: Tap15-opr
 spec:
   title: TAP Workshop - Operators
   description: An introduction to the Tanzu Application Platform for Operators
   vendor: eduk8s.io
   difficulty: beginner
   duration: 150m
-  url: https://github.com/Tanzu-Partner-SE/Tap-14-Operator
+  url: https://github.com/Tanzu-Partner-SE/Tap-15-Operator
   content:
-     files: "https://<githubtoken>:x-oauth-basic@github.com/Tanzu-Partner-SE/Tap-14-Operator/tarball/main?path=--anchored"
+     files: "https://<githubtoken>:x-oauth-basic@github.com/Tanzu-Partner-SE/Tap-15-Operator/tarball/main?path=--anchored"
      image: taptestdemoacr.azurecr.io/tapoperator:v14
   session:
     namespaces:
