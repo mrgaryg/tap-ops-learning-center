@@ -23,7 +23,7 @@ sed -i -r "s/ACCESS-TOKEN/$METADATA_STORE_ACCESS_TOKEN/g" $HOME/tap-values.yaml
 ```
 
 ```execute
-sudo tanzu package installed update tap -f tap-values.yaml -n tap-install
+sudo tanzu package installed update tap -f $HOME/tap-values.yaml -n tap-install
 ```
 
 <p style="color:blue"><strong> Query the app-tls-cert to get the CA Certificate </strong></p>
