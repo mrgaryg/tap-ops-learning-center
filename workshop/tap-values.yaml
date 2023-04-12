@@ -3,7 +3,7 @@ ceip_policy_disclosed: true
 shared:
   ingress_domain: SESSION_NAME.demo.tanzupartnerdemo.com
   image_registry:
-    project_path: "tapworkshopoperators.azurecr.io/tap14/tap-packages"
+    project_path: "tapworkshopoperators.azurecr.io/tap15/tap-packages"
     username: "tapworkshopoperators"
     password: "password-registry"
 buildservice:
