@@ -70,7 +70,7 @@ kubectl create ns tap-install
 ![Env](images/prepare-2.png)
 
 ```execute
-export INSTALL_BUNDLE=registry.tanzu.vmware.com/tanzu-cluster-essentials/cluster-essentials-bundle@sha256:2354688e46d4bb4060f74fca069513c9b42ffa17a0a6d5b0dbb81ed52242ea44
+export INSTALL_BUNDLE=registry.tanzu.vmware.com/tanzu-cluster-essentials/cluster-essentials-bundle@sha256:79abddbc3b49b44fc368fede0dab93c266ff7c1fe305e2d555ed52d00361b446
 export INSTALL_REGISTRY_HOSTNAME=registry.tanzu.vmware.com
 ```
 
@@ -80,12 +80,12 @@ pivnet login --api-token=$PIVNET_TOKEN
 <p style="color:blue"><strong> Download Cluster essentials </strong></p>
  
 ```execute
-pivnet download-product-files --product-slug='tanzu-cluster-essentials' --release-version='1.4.0' --product-file-id=1407185
+pivnet download-product-files --product-slug='tanzu-cluster-essentials' --release-version='1.5.0' --product-file-id=1460876
 ``` 
 <p style="color:blue"><strong> Un tar the cluster essentians to tanzu-cluster-essential directory </strong></p>
  
 ```execute
-tar -xvf tanzu-cluster-essentials-linux-amd64-1.4.0.tgz -C $HOME/tanzu-cluster-essentials
+tar -xvf tanzu-cluster-essentials-linux-amd64-1.5.0.tgz -C $HOME/tanzu-cluster-essentials
 ```
  
 ```execute
@@ -112,11 +112,11 @@ sudo cp $HOME/tanzu-cluster-essentials/kapp /usr/local/bin/kapp
 ```
  
 ```execute
- pivnet download-product-files --product-slug='tanzu-application-platform' --release-version='1.4.0' --product-file-id=1404618
+ pivnet download-product-files --product-slug='tanzu-application-platform' --release-version='1.5.0' --product-file-id=1446073
 ```
  
 ```execute 
- tar -xvf tanzu-framework-linux-amd64-v0.25.4.1.tar -C $HOME/tanzu
+ tar -xvf tanzu-framework-linux-amd64-v0.28.1.1.tar -C $HOME/tanzu
 ```
  
 ```execute 
@@ -126,7 +126,7 @@ sudo cp $HOME/tanzu-cluster-essentials/kapp /usr/local/bin/kapp
 
  
 ```execute 
- sudo install cli/core/v0.25.4/tanzu-core-linux_amd64 /usr/local/bin/tanzu
+ sudo install cli/core/v0.28.1/tanzu-core-linux_amd64 /usr/local/bin/tanzu
 ```
  
 ```execute 
@@ -186,6 +186,4 @@ sed -i -r "s/password-registry/$DOCKER_REGISTRY_PASSWORD/g" $HOME/autoheal.sh
 ```execute
 sed -i -r "s/SESSION_NAME/$SESSION_NAME/g" $HOME/tap-values.yaml
 ```
-```execute
-sed -i -r "s/tap1.3\/tap-demo/tap14/g" $HOME/tap-values.yaml
-``` 
+
