@@ -1,5 +1,8 @@
 Supply Chain Security Tools - Store saves software bills of materials (SBoMs) to a database and allows you to query for image, source code, package, and vulnerability relationships. It integrates with Supply Chain Security Tools - Scan to automatically store the resulting source code and image vulnerability reports. It accepts CycloneDX input and outputs in both human-readable and machine-readable formats, including JSON, text, and CycloneDX.
 
+```execute
+cd $HOME
+```
 <p style="color:blue"><strong> List version information for metadata store package  </strong></p>
 
 ```execute
@@ -29,7 +32,7 @@ sudo tanzu package installed update tap -f $HOME/tap-values.yaml -n tap-install
 <p style="color:blue"><strong> Query the app-tls-cert to get the CA Certificate </strong></p>
 
 ```execute
-kubectl get secret app-tls-cert -n metadata-store -o json | jq -r '.data."ca.crt"' | base64 -d > insight-ca.crt
+kubectl get secret app-tls-cert -n metadata-store -o json | jq -r '.data."ca.crt"' | base64 -d > $HOME/insight-ca.crt
 ```
 
 <p style="color:blue"><strong> Find the external IP address of the metadata-store-app </strong></p>
@@ -51,7 +54,7 @@ echo "$ENVOY_IP $METADATA_STORE_DOMAIN" | sudo tee -a /etc/hosts > /dev/null
 <p style="color:blue"><strong> Set the target endpoint </strong></p>
 
 ```execute
-tanzu insight config set-target https://$METADATA_STORE_DOMAIN --ca-cert insight-ca.crt
+tanzu insight config set-target https://$METADATA_STORE_DOMAIN --ca-cert $HOME/insight-ca.crt
 ```
 
 <p style="color:blue"><strong> Check the health </strong></p>
