@@ -30,7 +30,7 @@ export SESSION_NAME={{ session_namespace }}
 url: https://gitea-tapdemo.tap.tanzupartnerdemo.com/tapdemo-user/tanzu-java-web-app
 ```
 
-######  The instrcutoer will provide you with the Azure and Tanzunet credentails and the AZ login command
+######  The instructor will provide you with the Azure and Tanzunet credentails and the AZ login command
 
 
 ###### Create Kubernetes cluster with 3 nodes and it should take around 5-10 mins to complete, please wait for it to deploy successfully. 
