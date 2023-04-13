@@ -145,6 +145,7 @@ sudo cp $HOME/tanzu-cluster-essentials/kapp /usr/local/bin/kapp
 
 ```execute
 sudo tanzu secret registry add tap-registry --username tapworkshopoperators --password $DOCKER_REGISTRY_PASSWORD --server tapworkshopoperators.azurecr.io --export-to-all-namespaces --yes --namespace tap-install
+sudo tanzu secret registry list -n tap-install
 ```
 
 ![Secret Tap Registry](images/prepare-4.png)
